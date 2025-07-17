@@ -1,0 +1,348 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f5f5f5;
+  margin: 0;
+  padding: 20px;
+  transition: background 0.3s, color 0.3s;
+}
+
+.dark {
+  background: #222;
+  color: #fff;
+}
+
+.todo{
+  width: 122;
+height: 39;
+font-family: Kanit;
+font-weight: 500;
+font-style: Medium;
+font-size: 26px;
+line-height: 100%;
+letter-spacing: 0%;
+text-align: center;
+}
+
+h1 {
+  text-align: center;
+}
+
+.top-bar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+#search {
+width: 536px;
+height: 38px;
+top: 324px;
+left: 153px;
+opacity: 1;
+padding: 8px 16px;
+gap: 436px;
+border-radius: 5px;
+border-width: 1px;
+border: 1px solid #6C63FF;
+outline: none; 
+  transition: box-shadow 0.3s, border 0.3s;
+  background: url('./images/search.svg') no-repeat right 10px center;
+  background-size: 21px 21px; 
+  box-sizing: border-box;
+}
+#search:focus{
+box-shadow: 0px 0px 10px #6C63FF66;
+}
+
+.dark #search {
+  background: #333;
+  color: #fff;
+  border: 1px solid white;
+  background: url('./images/search2.svg') no-repeat right 10px center; 
+}
+.dark #search:focus{
+box-shadow: 0px 0px 10px #fff;
+}
+
+#filterSelect {
+  width: 156px;
+height: 38px;
+top: 513px;
+left: 281px;
+opacity: 1;
+gap: 10px;
+border-radius: 5px;
+padding: 10px;
+background-color: #6C63FF;
+color: #fff;
+outline: none;
+transition: box-shadow 0.3s, border 0.3s;
+border: none;
+font-size: 18px;
+}
+#filterSelect option{
+  background-color: #fff;
+  color: #6C63FF;
+  border: #6C63FF;
+  font-family: Kanit;
+font-weight: 500;
+font-style: Medium;
+font-size: 18px;
+line-height: 100%;
+letter-spacing: 0%;
+text-transform: uppercase;
+width: 93px;
+height: 84px;
+opacity: 1;
+top: 598px;
+left: 281px;
+border-radius: 5px;
+border-width: 1px;
+}
+#filterSelect:hover{
+box-shadow: 0px 0px 10px #6C63FF66;
+background-color: #534CC2;
+}
+
+#darkMode {
+  background: #6C63FF;
+  border: none;
+  width: 38px;
+height: 38px;
+opacity: 1;
+left: 712px;
+border-radius: 5px;
+
+}
+#darkMode:hover{
+box-shadow: 0px 0px 10px #6C63FF66;
+background-color: #534CC2;
+}
+.todo-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+.todo-item .left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.todo-item label.completed {
+  color: grey;
+  text-decoration: line-through;
+}
+
+#todo-list {
+  max-width: 600px;
+  margin: 0 auto;
+  list-style: none;
+  padding: 0;
+}
+
+#todo-list li {
+  padding: 12px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid #6C63FF;
+}
+input[type="checkbox"] {
+  transform: scale(1.3);
+  margin-right: 10px;
+  cursor: pointer;
+  accent-color: #6C63FF; 
+
+}
+
+#todo-list li:first-child {
+  border-top: none;
+}
+
+.todo-item .left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+#todo-list li label {
+  word-wrap: break-word;
+  white-space: normal;   
+  max-width: 490px;    
+  display: inline-block;
+}
+
+
+.todo-item label.completed {
+  color: grey;
+  text-decoration: line-through;
+}
+
+.buttons button {
+  margin-left: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #4f46e5;
+  font-size: 18px;
+  transition: color 0.3s;
+}
+
+button:hover .edit-icon {
+  content: url('./images/edit2.svg');
+}
+
+button:hover .delete-icon {
+  content: url('./images/delete2.svg');
+}
+
+p.empty {
+  font-family: Kanit;
+font-weight: 400;
+font-style: Regular;
+font-size: 20px;
+line-height: 100%;
+letter-spacing: 0%;
+text-transform: capitalize;
+}
+.empty{
+  margin: 30px auto;
+  text-align: center;
+}
+
+
+ #addBtn {
+  position: fixed;
+  bottom: 30px;
+  left: 74%;
+  transform: translateX(-50%);
+  background: #4f46e5;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 28px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+}
+
+#addBtn:hover{
+  box-shadow: 0px 0px 10px #6C63FF66;
+background-color: #534CC2;
+border: 1px solid #6C63FF;
+}
+
+#modal {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.5);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+#modalContent {
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 500px;
+height: 289px;
+opacity: 1;
+top: 118px;
+left: 450px;
+border-radius: 16px;
+box-sizing: border-box;
+padding: auto;
+}
+#modalContent p{
+  font-family: Kanit;
+font-weight: 500;
+font-style: Medium;
+font-size: 24px;
+text-align: center;
+line-height: 100%;
+letter-spacing: 0%;
+text-transform: uppercase;
+box-sizing: border-box;
+}
+#newNote {
+  width: 440px;
+  height: 38px;
+  opacity: 1;
+  padding: 8px 16px;
+  border: 1px solid #6C63FF;
+  outline: none;
+  border-radius: 5px;
+  display: block;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+#newNote:focus{
+box-shadow: 0px 0px 10px #6C63FF66;
+}
+.dark #newNote{
+  background-color: #222;
+  border-color: #fff;
+}
+.buttonContainer {
+  display: flex;
+  justify-content: space-between; 
+  width: 100%;
+  margin-top: auto;
+  padding: 0 20px 20px 20px;
+  box-sizing: border-box;
+}
+
+
+.dark #modalContent {
+  background: #222;
+  color: #fff;
+  border: 1px solid white;
+}
+
+#modalContent button {
+  width: 110px;
+height: 38px;
+top: 351px;
+left: 480px;
+opacity: 1;
+border-radius: 5px;
+gap: 10px;
+border-width: 1px;
+padding: 10px 22px ;
+font-size: 18px;
+}
+
+#apply {
+border-color: #6C63FF;
+color: white;
+background-color: #6C63FF;
+
+}
+
+#cancel {
+  border-color: #6C63FF;
+color: #6C63FF;
+background-color: #fff;
+}
+.dark #cancel {
+  background-color: #222;
+}
+#cancel:hover, #apply:hover{
+  box-shadow: 0px 0px 10px #6C63FF66;
+}

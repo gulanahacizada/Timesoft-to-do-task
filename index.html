@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Todo List</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+  <p class="todo">TODO LIST</p>
+  <div class="top-bar">
+    <input type="text" id="search" placeholder="Search note..." />
+
+    <select id="filterSelect">
+      <option value="ALL">ALL</option>
+      <option value="COMPLETE">COMPLETE</option>
+      <option value="INCOMPLETE">INCOMPLETE</option>
+    </select>
+
+    <button id="darkMode"><img src="./images/dark.svg" alt="dark"/></button>
+  </div>
+  </header>
+  <ul id="todo-list"></ul>
+  <img class="empty" src="./images/Detective-check-footprint 1.svg" alt="empty"/>
+  <p class="empty">Empty...</p>
+
+  <button id="addBtn">+</button>
+
+  <div id="modal">
+    <div id="modalContent">
+      <p >New Note</p>
+      <input type="text" id="newNote" placeholder="Input your note..." />
+      <div class="buttonContainer">
+      <button id="cancel">CANCEL</button>
+      <button id="apply">APPLY</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
