@@ -42,13 +42,10 @@ document.addEventListener("DOMContentLoaded", () => {
           </div>
         `;
 
-        // checkbox event
         li.querySelector(`#check-${i}`).addEventListener("change", () => toggleComplete(i));
 
-        // edit button event
         li.querySelector(".editBtn").addEventListener("click", () => openEdit(i));
 
-        // delete button event
         li.querySelector(".deleteBtn").addEventListener("click", () => deleteTodo(i));
 
         todoList.appendChild(li);
