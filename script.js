@@ -1,4 +1,3 @@
-
 document.addEventListener("DOMContentLoaded", () => {
 
   const todoList = document.getElementById("todo-list");
@@ -8,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const cancel = document.getElementById("cancel");
   const newNote = document.getElementById("newNote");
   const search = document.getElementById("search");
-  const empty= document.querySelectorAll(".empty");
+  const empty = document.querySelectorAll(".empty");
   const darkMode = document.getElementById("darkMode");
   const filterSelect = document.getElementById("filterSelect");
 
@@ -20,12 +19,12 @@ document.addEventListener("DOMContentLoaded", () => {
     todoList.innerHTML = "";
     let filtered = todos.filter(t => {
       const matchesSearch = t.text.toLowerCase().includes(search.value.toLowerCase());
-      if(filter === "COMPLETE") return t.complete && matchesSearch;
-      if(filter === "INCOMPLETE") return !t.complete && matchesSearch;
+      if (filter === "COMPLETE") return t.complete && matchesSearch;
+      if (filter === "INCOMPLETE") return !t.complete && matchesSearch;
       return matchesSearch;
     });
 
-    if(filtered.length === 0) {
+    if (filtered.length === 0) {
       empty.forEach(e => e.style.display = "block");
     } else {
       empty.forEach(e => e.style.display = "none");
@@ -38,11 +37,20 @@ document.addEventListener("DOMContentLoaded", () => {
             <label for="check-${i}" class="${todo.complete ? 'completed' : ''}">${todo.text}</label>
           </div>
           <div class="buttons">
-            <button onclick="openEdit(${i})"><img class="edit-icon" src="./images/edit1.svg"></button>
-            <button onclick="deleteTodo(${i})"><img class="delete-icon" src="./images/delete1.svg"></button>
+            <button class="editBtn"><img class="edit-icon" src="./images/edit1.svg"></button>
+            <button class="deleteBtn"><img class="delete-icon" src="./images/delete1.svg"></button>
           </div>
         `;
+
+        // checkbox event
         li.querySelector(`#check-${i}`).addEventListener("change", () => toggleComplete(i));
+
+        // edit button event
+        li.querySelector(".editBtn").addEventListener("click", () => openEdit(i));
+
+        // delete button event
+        li.querySelector(".deleteBtn").addEventListener("click", () => deleteTodo(i));
+
         todoList.appendChild(li);
       });
     }
@@ -62,6 +70,7 @@ document.addEventListener("DOMContentLoaded", () => {
     modal.style.display = "flex";
     newNote.value = todos[i].text;
     editIndex = i;
+    newNote.focus();
   }
 
   addBtn.onclick = () => {
@@ -76,9 +85,9 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   apply.onclick = () => {
-    if(newNote.value.trim() !== "") {
-      if(editIndex === null) {
-        todos.push({text: newNote.value, complete: false});
+    if (newNote.value.trim() !== "") {
+      if (editIndex === null) {
+        todos.push({ text: newNote.value, complete: false });
       } else {
         todos[editIndex].text = newNote.value;
       }
@@ -100,4 +109,3 @@ document.addEventListener("DOMContentLoaded", () => {
 
   render();
 });
-
